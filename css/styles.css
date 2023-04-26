@@ -7,8 +7,8 @@
 }
 
 :root {
-  --color-primary: #191d2b;
-  --color-secondary: #27ae60;
+  --color-primary: #1c1c1c;
+  --color-secondary: #f27405;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-grey-0: #f8f8f8;
@@ -23,16 +23,16 @@
 }
 
 .light-mode {
-  --color-primary: #ffffff;
-  --color-secondary: #f56692;
+  --color-primary: #f3f3f3;
+  --color-secondary: #2bd999;
   --color-white: #454e56;
   --color-black: #000;
-  --color-grey0: #f8f8f8;
+  --color-grey0: #ececec;
   --color-grey-1: #6c7983;
   --color-grey-2: #6c7983;
   --color-grey-3: #6c7983;
   --color-grey-4: #454e56;
-  --color-grey-5: #f8f8f8;
+  --color-grey-5: #ececec;
   --color-grey-6: #12181b;
 }
 
@@ -153,6 +153,9 @@ section {
   color: var(--color-grey-2);
   pointer-events: none;
 }
+.controlls .control:active {
+  transform: translateY(-3px);
+}
 
 .theme-btn {
   position: fixed;
@@ -182,12 +185,13 @@ section {
 }
 .header-content .left-header {
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
 .header-content .left-header .h-shape {
   transition: all 0.4s ease-in-out;
-  width: 65%;
+  width: 90%;
   height: 100%;
   background-color: var(--color-secondary);
   position: absolute;
@@ -199,10 +203,9 @@ section {
 }
 .header-content .left-header .image {
   border-radius: var(--br-sm-2);
-  height: 90%;
+  height: 101%;
   width: 68%;
   margin-left: 4rem;
-  background-color: var(--color-black);
   transition: all 0.4s ease-in-out;
 }
 .header-content .left-header .image img {
@@ -701,6 +704,60 @@ section {
   justify-content: flex-start;
 }
 
+@media screen and (max-width: 390px) {
+  .section {
+    padding: 0rem 3rem !important;
+  }
+  .sec1 {
+    min-height: 128vh;
+  }
+  .sec5 {
+    height: 110vh !important;
+  }
+  .main-title h2 {
+    font-size: 3rem !important;
+  }
+  .main-title span {
+    font-size: 3rem !important;
+  }
+  .header-content .left-header .image {
+    display: none;
+  }
+  .contact-content-con {
+    padding-top: 0;
+  }
+  .contact-content-con .left-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-content-con .left-contact h4 {
+    display: none;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item .icon {
+    width: 28px;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item .icon span {
+    display: none;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item p {
+    font-size: 0.9rem;
+    margin-left: -0.9rem;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item p:nth-child(2) {
+    margin-left: 0;
+  }
+  .contact-content-con .right-contact {
+    display: none;
+  }
+  .controlls {
+    margin-bottom: -1px;
+  }
+  .controlls .control {
+    width: 45px;
+    height: 45px;
+  }
+}
 @media screen and (max-width: 600px) {
   .about-container {
     grid-template-columns: 1fr;
@@ -764,11 +821,15 @@ section {
   header .right-header {
     padding: 0 !important;
   }
+  .main-title {
+    margin-top: 3rem;
+  }
   .theme-btn {
     width: 50px;
     height: 50px;
   }
   .header-content {
+    max-height: 100vh;
     grid-template-columns: 1fr;
     padding-bottom: 6rem;
   }
@@ -781,11 +842,20 @@ section {
     margin: 0 auto;
   }
   .right-header .name {
+    padding-top: 2rem;
     font-size: 2.5rem !important;
   }
   .header-content .left-header .image {
     margin: 0 auto;
     width: 90%;
+  }
+  .header-content .left-header .image img {
+    height: 70%;
+    margin-bottom: -19%;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
   }
   .controlls {
     top: auto;
@@ -808,9 +878,22 @@ section {
   .about-container .right-about {
     padding-top: 2.5rem;
   }
-  .portfolios,
+  .portfolios {
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
   .blogs {
-    grid-template-columns: 1fr 1fr;
+    margin: 5rem 0;
+    grid-template-columns: 1fr;
+  }
+  .sec5 {
+    height: 135vh;
+    padding: 0 10rem;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .main-title h2 {
     font-size: 4rem;
@@ -822,15 +905,21 @@ section {
     font-size: 4.5rem;
   }
 }
-@media screen and (max-width: 1432px) {
+@media screen and (max-width: 1440px) {
   header {
     padding: 0 !important;
   }
   .section {
-    padding: 7rem 11rem;
+    padding: 2rem 11rem;
   }
   .contact-content-con {
     flex-direction: column;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item {
+    justify-content: center;
+  }
+  .contact-content-con .left-contact .contact-info .contact-item p {
+    padding-left: 5px !important;
   }
   .contact-content-con .right-contact {
     margin-left: 0;
